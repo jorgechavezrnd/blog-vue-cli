@@ -12,10 +12,11 @@
           </h3>
 
           <BlogPost 
-            title="Sample blog post"
-            date="June 14th, 2017"
-            author="juanma"
-            :content="content" 
+            :img="article.urlToImage"
+            :title="article.title"
+            :date="article.publishedAt"
+            :author="article.author"
+            :content="article.content" 
           />
           <CommentsForm @add-comment="addComment($event)"/>
           <CommentsList :comments="comments"/>          
@@ -95,7 +96,8 @@ export default {
   data: function() {
     return {
       comments: comments_data,
-      content: content_post
+      content: content_post,
+      article: this.$root.$data.articles.filter( ({ key }) => key === this.$route.params.id)[0]
     } 
   },
   methods: {

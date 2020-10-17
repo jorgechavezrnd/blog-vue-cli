@@ -18,7 +18,7 @@ export default class NewsApiService {
       .then( articles => articles.reduce( (acc, article) => {
         const {url} = article
         const key = md5(url)
-        return [ { key,...articles },...acc]
+        return [ { key,...article },...acc]
       }, []) )
   }
 

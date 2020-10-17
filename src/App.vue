@@ -28,7 +28,7 @@ export default {
   },
 
   methods: {
-    setArticles: function (articles) {
+    setArticles: function(articles) {
       this.articles = articles
     }
   }
